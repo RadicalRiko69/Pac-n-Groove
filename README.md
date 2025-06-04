@@ -2,7 +2,7 @@
 <img src="https://github.com/user-attachments/assets/9a8f7453-f6ea-4b19-bfe9-d8353392b8d4">
 </h1>
 <h1 align="center">
-A fan created Pac-Man theme for Project OutFox!
+A fan created Pac-Man theme for SM5!
 </h1>
 
 # READ THIS FIRST!
@@ -19,7 +19,7 @@ For an authentic 1980 experience, refrain from using any simfiles that rely on b
 
 • Authentic sprites and sounds from the original Pac-Man (1980)!
 
-• Raspberry Pi friendly performance!
+• Raspberry Pi friendly performance?!
 
 • Portrait and Landscape (forced portrait with bezel) supported!
 
