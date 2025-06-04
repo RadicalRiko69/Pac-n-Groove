@@ -2,7 +2,7 @@
 <img src="https://github.com/user-attachments/assets/9a8f7453-f6ea-4b19-bfe9-d8353392b8d4">
 </h1>
 <h1 align="center">
-A fan created Pac-Man theme for SM5!
+A fan created Pac-Man theme for StepMania 5!
 </h1>
 
 # READ THIS FIRST!
