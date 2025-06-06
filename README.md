@@ -37,7 +37,7 @@ This theme manipulates game preferences heavily, including disabling Fantastic (
 # COPYRIGHT INFO!
 • Pac-Man is copyrighted to Bandai Namco Entertainment Inc., this project is not affiliated with BNEI nor is it official in any capacity.
 
-• StepMania, and its other forks, have zero affiliation with this theme.
+• StepMania, and its other forks, have zero association with this theme.
 
 • Frequency Style Arcade belongs to Giovanni Shawn @ Sushiverse Entertainment.
 # SPECIAL THANKS AND SHOUT-OUTS!
