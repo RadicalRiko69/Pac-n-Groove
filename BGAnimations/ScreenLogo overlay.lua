@@ -1,7 +1,7 @@
 return Def.ActorFrame {
   --PIU
     LoadActor(THEME:GetPathG("","breakdance.png"))..{
-      InitCommand=cmd(visible,IsGame("dance"));
+      InitCommand=cmd(visible,IsGame("pump"));
       OnCommand=cmd(Center;addx,400;zoom,1.3;SetTextureFiltering,false;queuecommand,"Move");
       MoveCommand=cmd(linear,1.25;addx,-400);
     };
