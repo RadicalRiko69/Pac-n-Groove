@@ -2,7 +2,6 @@ function ResetGame()
 	PREFSMAN:SetPreference("AllowW1",'AllowW1_Never');
 	PREFSMAN:SetPreference("MusicWheelUsesSections",'Never');
 	PREFSMAN:SetPreference("AttractSoundFrequency",'Never');
-	PREFSMAN:SetPreference("AttractVolume",0.00000);
 	PREFSMAN:SetPreference("EventMode",1);
 	PREFSMAN:SetPreference("MusicWheelSwitchSpeed",'75');
 	PREFSMAN:SetPreference("TimingWindowSecondsW2",0.080);
