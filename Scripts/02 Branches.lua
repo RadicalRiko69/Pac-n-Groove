@@ -38,9 +38,9 @@ Branch = {
 	Init = function() return "ScreenCompany" end,
 	AfterInit = function()
 		if GAMESTATE:GetCoinMode() == 'CoinMode_Home' then
-			return "ScreenCompany"
+			return "ScreenWarning"
 		else
-			return "ScreenTitleJoin"
+			return "ScreenWarning"
 		end
 	end,
 	NoiseTrigger = function()

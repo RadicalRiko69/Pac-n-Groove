@@ -19,7 +19,7 @@ function TextBannerAfterSet(self,param)
 		
 		-- subtitle below title
 		Subtitle:visible(true)
-		Subtitle:maxwidth(500)
+		Subtitle:maxwidth(800)
 		Subtitle:zoom(0.6)
 		Subtitle:y(7)
 		
@@ -48,7 +48,7 @@ function TextBannerHighScoreAfterSet(self,param)
 		
 		-- subtitle below title
 		Subtitle:visible(true)
-		Subtitle:maxwidth(500)
+		Subtitle:maxwidth(800)
 		Subtitle:zoom(0.6)
 		Subtitle:y(7)
 		

@@ -47,7 +47,7 @@ return Def.ActorFrame {
 	  };
     Def.BitmapText {
         Font="Common large";
-        OnCommand=cmd(maxwidth,1200;xy,SCREEN_CENTER_X,SCREEN_TOP+20;zoom,0.14;vertalign,top);
+        OnCommand=cmd(maxwidth,2400;xy,SCREEN_CENTER_X,SCREEN_TOP+20;zoom,0.14;vertalign,top);
         CurrentSongChangedMessageCommand=function(s)
         local song = GAMESTATE:GetCurrentSong();
           if song then

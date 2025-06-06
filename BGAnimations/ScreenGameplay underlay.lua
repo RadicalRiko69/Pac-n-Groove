@@ -14,7 +14,6 @@ t[#t+1] = Def.ActorFrame {
       SetCommand=function(self)
               self:SetAllStateDelays(0.125);
       end;
-      OffCommand=cmd(linear,1;addx,-130);
     };
     --Blinky
     LoadActor(THEME:GetPathG("","ghost 2x1.png"))..{
@@ -23,37 +22,36 @@ t[#t+1] = Def.ActorFrame {
       SetCommand=function(self)
               self:SetAllStateDelays(0.125):animate(true);
       end;
-      OffCommand=cmd(linear,1;addx,-130);
     };
     --Inky
     LoadActor(THEME:GetPathG("","inky 4x1.png"))..{
-      OnCommand=cmd(addx,-80;addy,-20;zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
-      WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Move");
+      OnCommand=cmd(addx,-80;zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
+      WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Start");
+      StartCommand=cmd(animate,true;linear,0.3;addy,-20;queuecommand,"Move");
       MoveCommand=function(self)
               self:SetAllStateDelays(0.125):animate(true);
               self:linear(0.3):addy(40):linear(0.3):addy(-40):queuecommand("Move");
       end;
-      OffCommand=cmd(linear,1;addx,-130);
     };
     --Pinky
     LoadActor(THEME:GetPathG("","pinky 4x1.png"))..{
-      OnCommand=cmd(addy,25;zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
-      WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Move");
+      OnCommand=cmd(zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
+      WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Start");
+      StartCommand=cmd(animate,true;linear,0.3;addy,20;queuecommand,"Move");
       MoveCommand=function(self)
               self:SetAllStateDelays(0.125):animate(true);
-              self:linear(0.3):addy(-60):linear(0.3):addy(60):queuecommand("Move");
+              self:linear(0.3):addy(-40):linear(0.3):addy(40):queuecommand("Move");
       end;
-      OffCommand=cmd(linear,1;addx,-130);
     };
     --Clyde
     LoadActor(THEME:GetPathG("","clyde 4x1.png"))..{
-      OnCommand=cmd(addx,80;addy,-20;zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
-      WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Move");
+      OnCommand=cmd(addx,80;zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
+      WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Start");
+      StartCommand=cmd(animate,true;linear,0.3;addy,-20;queuecommand,"Move");
       MoveCommand=function(self)
               self:SetAllStateDelays(0.125):animate(true);
               self:linear(0.3):addy(40):linear(0.3):addy(-40):queuecommand("Move");
       end;
-      OffCommand=cmd(linear,1;addx,-130);
     };
 };
 

@@ -1,16 +1,20 @@
 return Def.ActorFrame {
-  --PIU
-    LoadActor(THEME:GetPathG("","breakdance.png"))..{
-      InitCommand=cmd(visible,IsGame("pump"));
-      OnCommand=cmd(Center;zoom,0.24;SetTextureFiltering,false);
+  --Blinky
+    LoadActor(THEME:GetPathG("","gangster.png"))..{
+      OnCommand=cmd(Center;addx,-100;addy,-40;SetTextureFiltering,false);
     };
     --ITG
     LoadActor(THEME:GetPathG("","funky.png"))..{
       InitCommand=cmd(visible,IsGame("dance"));
-      OnCommand=cmd(Center;zoom,2.5;SetTextureFiltering,false);
+      OnCommand=cmd(Center;zoom,1.3;SetTextureFiltering,false);
+    };
+    --PIU
+    LoadActor(THEME:GetPathG("","breakdance.png"))..{
+      InitCommand=cmd(visible,IsGame("pump"));
+      OnCommand=cmd(Center;zoom,1.3;SetTextureFiltering,false);
     };
     LoadActor(THEME:GetPathG("","groove.png"))..{
-      OnCommand=cmd(Center;addy,-190;zoom,1;SetTextureFiltering,false);
+      OnCommand=cmd(Center;addy,-190;zoom,0.75;SetTextureFiltering,false);
     };
     Def.BitmapText {
         Font="Common normal";

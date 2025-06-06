@@ -459,7 +459,7 @@ return Def.ActorFrame {
                   speedvalue = lobpm..">"..hibpm
                 end;
               end;
-              self:settext("SPEED:\n"..speedvalue);
+              self:settext("Speed:\n"..speedvalue);
             else
               self:stoptweening():settext("");
             end;

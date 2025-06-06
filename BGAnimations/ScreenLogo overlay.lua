@@ -1,19 +1,23 @@
 return Def.ActorFrame {
   --PIU
     LoadActor(THEME:GetPathG("","breakdance.png"))..{
-      InitCommand=cmd(visible,IsGame("pump"));
-      OnCommand=cmd(Center;addx,-300;zoom,0.24;SetTextureFiltering,false;queuecommand,"Move");
-      MoveCommand=cmd(linear,1.25;addx,300);
+      InitCommand=cmd(visible,IsGame("dance"));
+      OnCommand=cmd(Center;addx,400;zoom,1.3;SetTextureFiltering,false;queuecommand,"Move");
+      MoveCommand=cmd(linear,1.25;addx,-400);
     };
     --ITG
     LoadActor(THEME:GetPathG("","funky.png"))..{
       InitCommand=cmd(visible,IsGame("dance"));
-      OnCommand=cmd(Center;addx,-300;zoom,2.5;SetTextureFiltering,false;queuecommand,"Move");
+      OnCommand=cmd(Center;addx,400;zoom,1.3;SetTextureFiltering,false;queuecommand,"Move");
+      MoveCommand=cmd(linear,1.25;addx,-400);
+    };
+    LoadActor(THEME:GetPathG("","gangster.png"))..{
+      OnCommand=cmd(Center;addx,-400;addy,-40;SetTextureFiltering,false;zoom,1;queuecommand,"Move");
       MoveCommand=cmd(linear,1.25;addx,300);
     };
     LoadActor(THEME:GetPathG("","groove.png"))..{
-      OnCommand=cmd(Center;addx,300;addy,-190;SetTextureFiltering,false;zoom,1;queuecommand,"Move");
-      MoveCommand=cmd(linear,1.25;addx,-300);
+      OnCommand=cmd(Center;addy,-300;SetTextureFiltering,false;zoom,0.75;queuecommand,"Move");
+      MoveCommand=cmd(linear,1.25;addy,110);
     };
     Def.BitmapText {
         Font="Common large";
