@@ -11,9 +11,11 @@ DO NOT CHARGE PEOPLE FOR THIS PROJECT! THIS IS A FREE THEME FOR EVERYONE TO ENJO
 Under no circumstances should you or anybody shove this theme onto a public arcade cabinet to make money, that is not allowed, period.
 
 For an authentic 1980 experience, refrain from using any simfiles that rely on background changes or any mod files.
+# WARNING!
+This theme manipulates game preferences heavily, including disabling Fantastic (W1) timing window and sorting folders. It is recommended you use a separate install of your SM5 choice and simply use the AdditionalSongs feature in the Preferences.ini file, otherwise switching themes will mess up the next used theme unless you reset your Preferences.ini values. This theme is not intended to be a serious theme, as it also removes modifiers, kickin' it old school.
 
 # NEW EXCITING FEATURES!
-• Exclusive art by Giovanni Shawn @ Sushiverse Entertainment.
+• Exclusive bezel art and illustrations by Giovanni Shawn @ Sushiverse Entertainment.
 
 • Exclusive pixel art by NamelessVega!
 
@@ -34,6 +36,8 @@ For an authentic 1980 experience, refrain from using any simfiles that rely on b
 • PERFECT or MISS timing window, extreme difficulty!
 # COPYRIGHT INFO!
 • Pac-Man is copyrighted to Bandai Namco Entertainment Inc., this project is not affiliated with BNEI nor is it official in any capacity.
+
+• StepMania, and its other forks, have zero affiliation with this theme.
 
 • Frequency Style Arcade belongs to Giovanni Shawn @ Sushiverse Entertainment.
 # SPECIAL THANKS AND SHOUT-OUTS!
