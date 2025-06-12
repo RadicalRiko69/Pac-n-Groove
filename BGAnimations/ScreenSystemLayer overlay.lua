@@ -37,12 +37,7 @@ t[#t+1] = Def.ActorFrame {
 
 t[#t+1] = Def.ActorFrame {
 	Def.Sprite{
-		Name="scanlines";
-		Texture=THEME:GetPathG("","crt.png");
-		InitCommand=cmd(Center;diffusealpha,0.325;SetTextureFiltering,false;blend,"BlendMode_Subtract");
-	};
-	Def.Sprite{
-		Name="black bars";
+		Name="bezel";
 		Texture=THEME:GetPathG("","sidebars (doubleres).png");
 		InitCommand=cmd(Center;zoom,0.668);
 	};

@@ -378,11 +378,13 @@ return Def.ActorFrame {
     };
     --SFX
     LoadActor(THEME:GetPathS("","pacman/down.wav"))..{
-		  PreviousSongMessageCommand=cmd(stop;play);
+		  PreviousGroupMessageCommand=cmd(queuecommand,"Play");
+      PlayCommand=cmd(stop;play);
     };	
-    LoadActor(THEME:GetPathS("","pacman/up.wav"))..{
-      NextSongMessageCommand=cmd(stop;play);
-    };	
+    LoadActor(THEME:GetPathS("","pacman/down.wav"))..{
+      NextGroupMessageCommand=cmd(queuecommand,"Play");
+      PlayCommand=cmd(stop;play);
+    };
     LoadActor(THEME:GetPathS("","pacman/eat.wav"))..{
       OffCommand=cmd(play);
     };	
@@ -430,9 +432,9 @@ return Def.ActorFrame {
         OnCommand=cmd(horizalign,left;maxwidth,550;xy,SCREEN_CENTER_X-150,SCREEN_TOP+48;zoom,0.4);
         OffCommand=cmd(diffusealpha,0);
         CurrentSongChangedMessageCommand=function(s)
-        local song = GAMESTATE:GetCurrentSong();
+        local song = GAMESTATE:GetCurrentSong():GetGroupName();
           if song then
-					  s:finishtweening():settext(song:GetGroupName());
+					  s:finishtweening():settext(string.gsub(song,"^%d%d? ?%- ?", ""));
 				  else
 					  s:finishtweening():settext("");
 				  end;
@@ -494,4 +496,16 @@ return Def.ActorFrame {
         OnCommand=cmd(xy,SCREEN_CENTER_X,SCREEN_CENTER_Y+60;zoom,0.4;diffusealpha,0);
         OffCommand=cmd(diffusealpha,1;diffusecolor,color("#ff0000"));
 	  };
+    Def.Sprite{
+      Name="scanlines";
+      Texture=THEME:GetPathG("","crt.png");
+      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
+      OnCommand=function(s)
+        if ThemePrefs.Get("Scanlines") == true then
+          s:finishtweening():diffusealpha(0.45);
+        else
+          s:finishtweening():diffusealpha(0);
+        end;
+      end;
+    };
 };

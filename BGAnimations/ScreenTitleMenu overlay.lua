@@ -1,4 +1,20 @@
+local function inputs(event)
+	--Check if player clicked screen, then skip to next screen if they did.
+	local button = ToEnumShortString(event.DeviceInput.button)
+	if button == "left mouse button" then
+		--SCREENMAN:GetTopScreen():StartTransitioningScreen("SM_GoToNextScreen");
+	end
+end;
+
 return Def.ActorFrame {
+    OnCommand=function(self)
+      SCREENMAN:GetTopScreen():AddInputCallback(inputs);
+    end;
+    CodeMessageCommand=function(self, params)
+      if params.Name == "Trigger" then
+        SCREENMAN:SetNewScreen("ScreenVisitDevs");
+      end
+    end;
   --Blinky
     LoadActor(THEME:GetPathG("","gangster.png"))..{
       OnCommand=cmd(Center;addx,-100;addy,-40;SetTextureFiltering,false);
@@ -31,4 +47,16 @@ return Def.ActorFrame {
         Text="Frequency Style Arcade";
         OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#ff1500");zoom,0.24;SetTextureFiltering,false);
 	  };
+    Def.Sprite{
+      Name="scanlines";
+      Texture=THEME:GetPathG("","crt.png");
+      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
+      OnCommand=function(s)
+        if ThemePrefs.Get("Scanlines") == true then
+          s:finishtweening():diffusealpha(0.45);
+        else
+          s:finishtweening():diffusealpha(0);
+        end;
+      end;
+    };
 };

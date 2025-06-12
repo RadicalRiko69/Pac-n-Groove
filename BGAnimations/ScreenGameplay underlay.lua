@@ -27,19 +27,19 @@ t[#t+1] = Def.ActorFrame {
     LoadActor(THEME:GetPathG("","inky 4x1.png"))..{
       OnCommand=cmd(addx,-80;zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
       WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Start");
-      StartCommand=cmd(animate,true;linear,0.3;addy,-20;queuecommand,"Move");
+      StartCommand=cmd(linear,0.3;addy,-20;queuecommand,"Move");
       MoveCommand=function(self)
-              self:SetAllStateDelays(0.125):animate(true);
+              self:SetAllStateDelays(0.14):animate(true);
               self:linear(0.3):addy(40):linear(0.3):addy(-40):queuecommand("Move");
       end;
     };
     --Pinky
     LoadActor(THEME:GetPathG("","pinky 4x1.png"))..{
-      OnCommand=cmd(zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
+      OnCommand=cmd(zoom,4;SetTextureFiltering,false;setstate,3;queuecommand,"Wait");
       WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Start");
-      StartCommand=cmd(animate,true;linear,0.3;addy,20;queuecommand,"Move");
+      StartCommand=cmd(linear,0.3;addy,20;queuecommand,"Move");
       MoveCommand=function(self)
-              self:SetAllStateDelays(0.125):animate(true);
+              self:SetAllStateDelays(0.145):animate(true);
               self:linear(0.3):addy(-40):linear(0.3):addy(40):queuecommand("Move");
       end;
     };
@@ -47,9 +47,9 @@ t[#t+1] = Def.ActorFrame {
     LoadActor(THEME:GetPathG("","clyde 4x1.png"))..{
       OnCommand=cmd(addx,80;zoom,4;SetTextureFiltering,false;queuecommand,"Wait");
       WaitCommand=cmd(animate,false;sleep,4.25;queuecommand,"Start");
-      StartCommand=cmd(animate,true;linear,0.3;addy,-20;queuecommand,"Move");
+      StartCommand=cmd(linear,0.3;addy,-20;queuecommand,"Move");
       MoveCommand=function(self)
-              self:SetAllStateDelays(0.125):animate(true);
+              self:SetAllStateDelays(0.14):animate(true);
               self:linear(0.3):addy(40):linear(0.3):addy(-40):queuecommand("Move");
       end;
     };

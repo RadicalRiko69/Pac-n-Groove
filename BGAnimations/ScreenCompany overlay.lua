@@ -11,7 +11,19 @@ return Def.ActorFrame {
     };
     --name
     LoadActor(THEME:GetPathG("","brand.png"))..{
-      InitCommand=cmd(Center;zoom,0.2;addy,300);
+      InitCommand=cmd(Center;zoom,0.4;addy,300);
       OnCommand=cmd(linear,2;addy,-280;SetTextureFiltering,false;sleep,2;diffusealpha,0);
+    };
+    Def.Sprite{
+      Name="scanlines";
+      Texture=THEME:GetPathG("","crt.png");
+      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
+      OnCommand=function(s)
+        if ThemePrefs.Get("Scanlines") == true then
+          s:finishtweening():diffusealpha(0.45);
+        else
+          s:finishtweening():diffusealpha(0);
+        end;
+      end;
     };
 };

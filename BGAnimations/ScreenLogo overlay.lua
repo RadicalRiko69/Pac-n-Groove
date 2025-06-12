@@ -37,4 +37,16 @@ return Def.ActorFrame {
         OnCommand=cmd(Center;diffusealpha,0;zoom,0.64;addy,160;sleep,1.25;diffusealpha,1;queuecommand,"Blink");
         BlinkCommand=cmd(sleep,0.5;diffusealpha,0;sleep,0.5;diffusealpha,1;queuecommand,"Blink");
 	  };
+    Def.Sprite{
+      Name="scanlines";
+      Texture=THEME:GetPathG("","crt.png");
+      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
+      OnCommand=function(s)
+        if ThemePrefs.Get("Scanlines") == true then
+          s:finishtweening():diffusealpha(0.45);
+        else
+          s:finishtweening():diffusealpha(0);
+        end;
+      end;
+    };
 };

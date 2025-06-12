@@ -22,4 +22,16 @@ return Def.ActorFrame {
         Text="Sincerely,\nFrequency Style Arcade";
         OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#00ffff");zoom,0.24;SetTextureFiltering,false);
 	  };
+    Def.Sprite{
+      Name="scanlines";
+      Texture=THEME:GetPathG("","crt.png");
+      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
+      OnCommand=function(s)
+        if ThemePrefs.Get("Scanlines") == true then
+          s:finishtweening():diffusealpha(0.45);
+        else
+          s:finishtweening():diffusealpha(0);
+        end;
+      end;
+    };
 };
