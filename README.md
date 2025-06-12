@@ -48,3 +48,5 @@ This theme manipulates game preferences heavily, including disabling Fantastic (
 • The Official Pac-Man Discord, hi.
 
 • and YOU!
+# CHECK US OUT!
+Visit the [Sushiverse Entertainment Discord](https://discord.gg/Sa7XMWp) for updates and upcoming projects!
