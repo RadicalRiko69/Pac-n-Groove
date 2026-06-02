@@ -1,9 +1,10 @@
 return Def.ActorFrame {
-  LoadActor("life")..{
-      OnCommand=function(self)
-          self:xy(SCREEN_CENTER_X+120,SCREEN_BOTTOM-20):diffusealpha(0):horizalign(right):zoom(0.18):sleep(4.25):diffusealpha(1);
-      end;
-  };
+    LoadActor("life")..{
+        OnCommand=function(self)
+            self:zoom(0.18);
+            self:xy(SCREEN_CENTER_X+120,SCREEN_BOTTOM-20);
+        end;
+    };
     LoadFont("Common large")..{
       InitCommand=function(self)
           self:xy(SCREEN_CENTER_X-80,SCREEN_TOP+38):horizalign(right):zoom(0.152);
@@ -80,16 +81,4 @@ return Def.ActorFrame {
           end;
 		  end;
 	  };
-    Def.Sprite{
-      Name="scanlines";
-      Texture=THEME:GetPathG("","crt.png");
-      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
-      OnCommand=function(s)
-        if ThemePrefs.Get("Scanlines") == true then
-          s:finishtweening():diffusealpha(0.45);
-        else
-          s:finishtweening():diffusealpha(0);
-        end;
-      end;
-    };
 };

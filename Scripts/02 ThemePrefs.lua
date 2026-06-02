@@ -6,12 +6,11 @@ end
 -- Example usage of new system (not fully implemented yet)
 local Prefs =
 {
-	
-	Scanlines =
+	MsPacMode =
 	{
-		Default = false,
-		Choices = { OptionNameString('Off'), OptionNameString('On') },
-		Values = { false, true }
+		Default = "Off",
+		Choices = { "Off", "On" },
+		Values = { "Off", "On" }
 	},
 	SampleMusicLoops =
 	{
@@ -22,3 +21,13 @@ local Prefs =
 }
 
 ThemePrefs.InitAll(Prefs)
+
+function InitUserPrefs()
+	for k, v in pairs(Prefs) do
+		-- kind of xxx
+		local GetPref = type(v) == "boolean" and GetUserPrefB or GetUserPref
+		if GetPref(k) == nil then
+			SetUserPref(k, v)
+		end
+	end
+end

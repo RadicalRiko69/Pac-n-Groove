@@ -9,7 +9,7 @@ return Def.ActorFrame {
 	  };
     Def.BitmapText {
         Font="Common normal";
-        Text="Theme designed\nand coded by\n\nGiovanni Shawn @\nSushiverse Entertainment\n\n---\n\nSpecial thanks to\n\nNamelessVega\n\nfor the pixel art\ntitle screen!";
+        Text="Theme designed\nand coded by\n\nGiovanni Shawn @\nSushiverse Entertainment\n\n---\n\nSpecial thanks to\n\nNamelessVega\n\nfor the\namazing pixel art!";
         OnCommand=cmd(Center;zoom,0.64;addy,-20);
 	  };
     Def.BitmapText {
@@ -19,19 +19,7 @@ return Def.ActorFrame {
 	  };
     Def.BitmapText {
         Font="Common large";
-        Text="Sincerely,\nFrequency Style Arcade";
-        OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#00ffff");zoom,0.24;SetTextureFiltering,false);
+        Text="Sincerely,\nSushiverse Entertainment";
+        OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#00ff62ff");zoom,0.24;SetTextureFiltering,false);
 	  };
-    Def.Sprite{
-      Name="scanlines";
-      Texture=THEME:GetPathG("","crt.png");
-      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
-      OnCommand=function(s)
-        if ThemePrefs.Get("Scanlines") == true then
-          s:finishtweening():diffusealpha(0.45);
-        else
-          s:finishtweening():diffusealpha(0);
-        end;
-      end;
-    };
 };

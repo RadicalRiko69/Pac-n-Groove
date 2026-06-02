@@ -1,7 +1,23 @@
 return Def.ActorFrame {
-    LoadActor(THEME:GetPathS("","pacman/intermission.wav"))..{
+    LoadActor(THEME:GetPathS("","pacman/intermission"))..{
       OnCommand=cmd(queuecommand,"Play");
-      PlayCommand=cmd(play);
+      PlayCommand=function(self)
+          if ThemePrefs.Get("MsPacMode") == "Off" then
+            self:play();
+          else
+            self:stop();
+          end;
+      end,
+    };
+    LoadActor(THEME:GetPathS("","mspacman/intermission"))..{
+      OnCommand=cmd(queuecommand,"Play");
+      PlayCommand=function(self)
+          if ThemePrefs.Get("MsPacMode") == "On" then
+            self:play();
+          else
+            self:stop();
+          end;
+      end,
     };
     Def.Quad {
 		  InitCommand=cmd(zoomx,8500;zoomy,8500;diffuse,color("#000000"));
@@ -29,7 +45,7 @@ return Def.ActorFrame {
             end;
         end,
 	  };
-    LoadActor(THEME:GetPathS("","pacman/extend.wav"))..{
+    LoadActor(THEME:GetPathS("","_extend.wav"))..{
       OnCommand=cmd(sleep,6;queuecommand,"Play");
       PlayCommand=function(s)
           local life = STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetCurrentLife();
@@ -41,16 +57,22 @@ return Def.ActorFrame {
         end,
     };
     Def.Sprite{
-      Name= "pacman",
+      Name= "chr",
       Frames= {
         {Frame= 0, Delay= 0.05},
         {Frame= 1, Delay= 0.05},
         {Frame= 2, Delay= 0.05},
         {Frame= 1, Delay= 0.05},
       },
-        OnCommand= cmd(Center;SetTextureFiltering,false;zoom,2.5;addx,-300;queuecommand,"Run"),
+        InitCommand=function(self)
+          if ThemePrefs.Get("MsPacMode") == "On" then
+            self:Load(THEME:GetPathG("","mspacman/chr 4x1.png"));
+          else
+            self:Load(THEME:GetPathG("","pacman/chr 4x1.png"));
+          end;
+        end,
+        OnCommand= cmd(Center;SetTextureFiltering,false;zoom,4;rotationy,180;addx,-306;queuecommand,"Run"),
         RunCommand=cmd(sleep,0.34;linear,4.5;addx,590),
-        Texture=THEME:GetPathG("","pac 4x1.png"),
     };
     Def.Sprite{
       Name= "ghost",

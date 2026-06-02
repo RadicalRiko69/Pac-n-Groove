@@ -13,24 +13,46 @@ return Def.ActorFrame {
     CodeMessageCommand=function(self, params)
       if params.Name == "Trigger" then
         SCREENMAN:SetNewScreen("ScreenVisitDevs");
+      elseif params.Name == "MsPacMode" then
+        ThemePrefs.Set("MsPacMode","On");
+        SCREENMAN:SetNewScreen("ScreenCompany");
+      elseif params.Name == "Revert" then
+        ThemePrefs.Set("MsPacMode","Off");
+        SCREENMAN:SetNewScreen("ScreenCompany");
       end
     end;
-  --Blinky
+    --Blinky
     LoadActor(THEME:GetPathG("","gangster.png"))..{
-      OnCommand=cmd(Center;addx,-100;addy,-40;SetTextureFiltering,false);
+      OnCommand=cmd(SetTextureFiltering,false;zoom,1);
+      InitCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:x(SCREEN_CENTER_X+100):y(SCREEN_CENTER_Y-10);
+        else
+          self:x(SCREEN_CENTER_X-100):y(SCREEN_CENTER_Y-40);
+        end;
+      end,
+    },
+    --Dancer
+    Def.Sprite {
+      InitCommand=cmd(Center;zoom,1.3;SetTextureFiltering,false);
+      OnCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:Load(THEME:GetPathG("","mspacman/title.png"));
+        else
+          self:Load(THEME:GetPathG("","pacman/title.png"));
+        end;
+      end,
     };
-    --ITG
-    LoadActor(THEME:GetPathG("","funky.png"))..{
-      InitCommand=cmd(visible,IsGame("dance"));
-      OnCommand=cmd(Center;zoom,1.3;SetTextureFiltering,false);
-    };
-    --PIU
-    LoadActor(THEME:GetPathG("","breakdance.png"))..{
-      InitCommand=cmd(visible,IsGame("pump"));
-      OnCommand=cmd(Center;zoom,1.3;SetTextureFiltering,false);
-    };
-    LoadActor(THEME:GetPathG("","groove.png"))..{
-      OnCommand=cmd(Center;addy,-190;zoom,0.75;SetTextureFiltering,false);
+    --Logo
+    Def.Sprite {
+      InitCommand=cmd(Center;addy,-190;zoom,0.75;SetTextureFiltering,false);
+      OnCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:Load(THEME:GetPathG("","mspacman/logo.png"));
+        else
+          self:Load(THEME:GetPathG("","pacman/logo.png"));
+        end;
+      end,
     };
     Def.BitmapText {
         Font="Common normal";
@@ -44,8 +66,8 @@ return Def.ActorFrame {
 	  };
     Def.BitmapText {
         Font="Common large";
-        Text="Frequency Style Arcade";
-        OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#ff1500");zoom,0.24;SetTextureFiltering,false);
+        Text="Sushiverse Entertainment";
+        OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#00ff62ff");zoom,0.24;SetTextureFiltering,false);
 	  };
     Def.Sprite{
       Name="scanlines";

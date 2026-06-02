@@ -1,7 +1,7 @@
 
 --
 local t = Def.ActorFrame {}
-	-- Text
+	--[[ Text
 t[#t+1] = Def.ActorFrame {
 	InitCommand=cmd(Center;diffusealpha,0);
 	OnCommand=cmd(finishtweening;diffusealpha,1;);
@@ -23,23 +23,13 @@ t[#t+1] = Def.ActorFrame {
 		self:playcommand( "Off" );
 	end;
 	HideSystemMessageMessageCommand = cmd(finishtweening);
-};
-
-t[#t+1] = Def.ActorFrame {
-	InitCommand=cmd(xy,SCREEN_CENTER_X-150,SCREEN_BOTTOM-10;zoom,0.5);
-	Def.BitmapText{
-		Font="Common large";
-		Name="credit";
-		Text="FREE PLAY";
-		InitCommand=cmd(horizalign,left;vertalign,bottom;zoom,0.4);
-	};
-};
+};--]]
 
 t[#t+1] = Def.ActorFrame {
 	Def.Sprite{
 		Name="bezel";
-		Texture=THEME:GetPathG("","sidebars (doubleres).png");
-		InitCommand=cmd(Center;zoom,0.668);
+		Texture=THEME:GetPathG("","blackbars (doubleres).png");
+		InitCommand=cmd(Center;zoom,0.668;SetTextureFiltering,false);
 	};
 };
 

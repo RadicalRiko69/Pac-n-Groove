@@ -1,24 +1,60 @@
 return Def.ActorFrame {
-  --PIU
-    LoadActor(THEME:GetPathG("","breakdance.png"))..{
-      InitCommand=cmd(visible,IsGame("pump"));
-      OnCommand=cmd(Center;addx,400;zoom,1.3;SetTextureFiltering,false;queuecommand,"Move");
-      MoveCommand=cmd(linear,1.25;addx,-400);
-    };
-    --ITG
-    LoadActor(THEME:GetPathG("","funky.png"))..{
-      InitCommand=cmd(visible,IsGame("dance"));
-      OnCommand=cmd(Center;addx,400;zoom,1.3;SetTextureFiltering,false;queuecommand,"Move");
-      MoveCommand=cmd(linear,1.25;addx,-400);
-    };
+    --Ghost
     LoadActor(THEME:GetPathG("","gangster.png"))..{
-      OnCommand=cmd(Center;addx,-400;addy,-40;SetTextureFiltering,false;zoom,1;queuecommand,"Move");
-      MoveCommand=cmd(linear,1.25;addx,300);
-    };
-    LoadActor(THEME:GetPathG("","groove.png"))..{
-      OnCommand=cmd(Center;addy,-300;SetTextureFiltering,false;zoom,0.75;queuecommand,"Move");
+      OnCommand=cmd(diffusealpha,0;SetTextureFiltering,false;zoom,1;queuecommand,"Ready");
+      ReadyCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:diffusealpha(1):x(SCREEN_CENTER_X+400):y(SCREEN_CENTER_Y-10):queuecommand("Position");
+        else
+          self:diffusealpha(1):x(SCREEN_CENTER_X-400):y(SCREEN_CENTER_Y-40):queuecommand("Position");
+        end;
+      end,
+      PositionCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:linear(1.25):x(SCREEN_CENTER_X+100);
+        else
+          self:linear(1.25):x(SCREEN_CENTER_X-100);
+        end;
+      end,
+    },
+    --Dancer
+    Def.Sprite {
+      InitCommand=cmd(y,SCREEN_CENTER_Y;zoom,1.3;SetTextureFiltering,false;queuecommand,"Ready");
+      ReadyCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:diffusealpha(1):x(SCREEN_CENTER_X-400):queuecommand("Position");
+        else
+          self:diffusealpha(1):x(SCREEN_CENTER_X+400):queuecommand("Position");
+        end;
+      end,
+      PositionCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:linear(1.25):x(SCREEN_CENTER_X);
+        else
+          self:linear(1.25):x(SCREEN_CENTER_X);
+        end;
+      end,
+      OnCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:Load(THEME:GetPathG("","mspacman/title.png"));
+        else
+          self:Load(THEME:GetPathG("","pacman/title.png"));
+        end;
+      end,
+    },
+    --Logo
+    Def.Sprite {
+      InitCommand=cmd(Center;addy,-300;SetTextureFiltering,false;zoom,0.75;queuecommand,"Move");
       MoveCommand=cmd(linear,1.25;addy,110);
-    };
+      OnCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:Load(THEME:GetPathG("","mspacman/logo.png"));
+        else
+          self:Load(THEME:GetPathG("","pacman/logo.png"));
+        end;
+      end,
+    },
+    --Credits
     Def.BitmapText {
         Font="Common large";
         Text="A beloved Pac-Man fan creation by";
@@ -27,26 +63,15 @@ return Def.ActorFrame {
 	  };
     Def.BitmapText {
         Font="Common large";
-        Text="Frequency Style Arcade";
-        OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#ff1500");diffusealpha,0;zoom,0.24;SetTextureFiltering,false;queuecommand,"Move");
+        Text="Sushiverse Entertainment";
+        OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-40;diffusecolor,color("#00ff62ff");diffusealpha,0;zoom,0.24;SetTextureFiltering,false;queuecommand,"Move");
         MoveCommand=cmd(sleep,1.25;diffusealpha,1);
 	  };
+    --Join Text
     Def.BitmapText {
         Font="Common normal";
         Text="Press Start to begin!\n(1 Player Game Only)";
         OnCommand=cmd(Center;diffusealpha,0;zoom,0.64;addy,160;sleep,1.25;diffusealpha,1;queuecommand,"Blink");
         BlinkCommand=cmd(sleep,0.5;diffusealpha,0;sleep,0.5;diffusealpha,1;queuecommand,"Blink");
 	  };
-    Def.Sprite{
-      Name="scanlines";
-      Texture=THEME:GetPathG("","crt.png");
-      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
-      OnCommand=function(s)
-        if ThemePrefs.Get("Scanlines") == true then
-          s:finishtweening():diffusealpha(0.45);
-        else
-          s:finishtweening():diffusealpha(0);
-        end;
-      end;
-    };
 };

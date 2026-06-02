@@ -1,9 +1,6 @@
 return Def.ActorFrame {
     --Maze
     Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(320,1):Center():addy(12):diffuse(color("#0000ff"))
-      end,
       PlayerJoinedMessageCommand=function(self)
         SCREENMAN:SetNewScreen("ScreenCompany");
         SCREENMAN:SystemMessage("2 PLAYERS ARE\nNOT ALLOWED!!!");
@@ -17,335 +14,17 @@ return Def.ActorFrame {
         end;
       end,
     },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(320,1):Center():addy(-12):diffuse(color("#0000ff"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(320,1):Center():addy(-208):diffuse(color("#0000ff"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(1,196):Center():addx(-160):addy(-110):diffuse(color("#0000ff"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(1,196):Center():addx(160):addy(-110):diffuse(color("#0000ff"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(1,260):Center():addx(-160):addy(142):diffuse(color("#0000ff"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(1,260):Center():addx(160):addy(142):diffuse(color("#0000ff"))
-      end,
-    },
-    --Dots NORTH EAST
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-20):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-40):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-60):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-80):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-100):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-120):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-140):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-160):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-180):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(-200):diffuse(color("#ffff40"))
-      end,
-    },
-    --Power Pellet MIDDLE RIGHT
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(8,6):Center():addx(170):addy(0):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(6,8):Center():addx(170):addy(0):diffuse(color("#ffff40"))
-      end,
-    },
-    --Power Pellet TOP RIGHT
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(8,6):Center():addx(170):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(6,8):Center():addx(170):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    --Dots SOUTH EAST
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(20):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(40):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(60):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(80):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(100):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(120):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(140):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(160):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(180):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(200):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(170):addy(220):diffuse(color("#ffff40"))
-      end,
-    },    
-    --Dots NORTH WEST
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-20):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-40):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-60):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-80):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-100):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-120):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-140):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-160):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-180):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(-200):diffuse(color("#ffff40"))
-      end,
-    },
-    --Power Pellet MIDDLE LEFT
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(8,6):Center():addx(-170):addy(0):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(6,8):Center():addx(-170):addy(0):diffuse(color("#ffff40"))
-      end,
-    },
-    --Power Pellet TOP LEFT
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(8,6):Center():addx(-170):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(6,8):Center():addx(-170):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    --Dots SOUTH WEST
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(20):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(40):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(60):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(80):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(100):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(120):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(140):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(160):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(180):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(200):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-170):addy(220):diffuse(color("#ffff40"))
-      end,
-    },
-    --Dots NORTH CENTER
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(150):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(130):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(110):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(90):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(70):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
-    Def.Quad {
-      InitCommand=function(self)
-        self:zoomto(4,4):Center():addx(-150):addy(-220):diffuse(color("#ffff40"))
-      end,
-    },
     --Wheel highlight
     Def.Quad {
       InitCommand=function(self)
-        self:zoomto(260,15):Center():diffuse(color("#ffff00")):blend(Blend.Multiply)
+        self:zoomto(260,22):Center():diffuse(color("#ffff2e")):blend(Blend.Multiply)
       end,
     },	
-  --Pac
-    LoadActor(THEME:GetPathG("","pac 4x1.png"))..{
-      OnCommand=cmd(Center;addx,-140;zoom,0.55;SetTextureFiltering,false);
+    --Player Character
+    Def.Sprite {
+      InitCommand=cmd(Center;addx,-140;zoom,0.95;rotationy,180;SetTextureFiltering,false);
       CurrentSongChangedMessageCommand=cmd(playcommand,"Set");
+      OffCommand=cmd(linear,1;addx,130);
       SetCommand=function(self)
             local song = GAMESTATE:GetCurrentSong()
             if song then
@@ -357,11 +36,17 @@ return Def.ActorFrame {
               self:SetAllStateDelays(1);
         end;
       end;
-      OffCommand=cmd(linear,1;addx,130);
-    };
+      OnCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:Load(THEME:GetPathG("","mspacman/chr 4x1.png"));
+        else
+          self:Load(THEME:GetPathG("","pacman/chr 4x1.png"));
+        end;
+      end,
+    },
     --Blinky
-    LoadActor(THEME:GetPathG("","ghost 2x1.png"))..{
-      OnCommand=cmd(Center;addx,140;zoom,1.25;SetTextureFiltering,false);
+    LoadActor(THEME:GetPathG("","blinky 20x1.png"))..{
+      OnCommand=cmd(Center;addx,140;zoom,1;SetTextureFiltering,false);
       CurrentSongChangedMessageCommand=cmd(playcommand,"Set");
       SetCommand=function(self)
             local song = GAMESTATE:GetCurrentSong()
@@ -375,74 +60,55 @@ return Def.ActorFrame {
         end;
       end;
       OffCommand=cmd(linear,1;addx,-130);
-    };
+    };    
+    --Wheel highlight
+    Def.Sprite {
+      InitCommand=cmd(Center;zoom,1.5;SetTextureFiltering,false);
+      OnCommand=function(self)
+        if ThemePrefs.Get("MsPacMode") == "On" then
+          self:Load(THEME:GetPathG("","mspacman/music.png"));
+        else
+          self:Load(THEME:GetPathG("","pacman/music.png"));
+        end;
+      end,
+    },
     --SFX
-    LoadActor(THEME:GetPathS("","pacman/down.wav"))..{
-		  PreviousGroupMessageCommand=cmd(queuecommand,"Play");
-      PlayCommand=cmd(stop;play);
-    };	
-    LoadActor(THEME:GetPathS("","pacman/down.wav"))..{
-      NextGroupMessageCommand=cmd(queuecommand,"Play");
-      PlayCommand=cmd(stop;play);
+    LoadActor("pacfx")..{
     };
-    LoadActor(THEME:GetPathS("","pacman/eat.wav"))..{
-      OffCommand=cmd(play);
-    };	
     --Text
     Def.BitmapText {
         Font="Common normal";
         Text="TIMER";
-        OnCommand=cmd(horizalign,right;xy,SCREEN_CENTER_X+152,SCREEN_BOTTOM-50;zoom,0.6;diffusecolor,color("#ff0000"));
+        OnCommand=cmd(horizalign,right;xy,SCREEN_CENTER_X+122,SCREEN_TOP+16;zoom,0.4;diffusecolor,color("#ff0000"));
+        OffCommand=function(s)
+          SOUND:StopMusic();
+          s:diffusealpha(0);
+        end;
 	  };
     Def.BitmapText {
         Font="Common large";
-        Text="Select Music";
-        OnCommand=cmd(horizalign,left;xy,SCREEN_CENTER_X-135,SCREEN_TOP+18;zoom,0.27);
-        OffCommand=function(s)
-          SOUND:StopMusic();
-        end;
-	  };	
-    Def.BitmapText {
-        Font="Common normal";
-        Text="music by:";
-        OnCommand=cmd(horizalign,left;xy,SCREEN_CENTER_X-150,SCREEN_BOTTOM-38;zoom,0.4;diffusecolor,color("#ff76c0"));
+        Text="SELECT MUSIC";
+        OnCommand=cmd(horizalign,left;xy,SCREEN_CENTER_X-170,SCREEN_TOP+14;zoom,0.25);
         OffCommand=cmd(diffusealpha,0);
 	  };
     Def.BitmapText {
         Font="Common normal";
-        OnCommand=cmd(horizalign,left;maxwidth,550;xy,SCREEN_CENTER_X-150,SCREEN_BOTTOM-28;zoom,0.4;diffusecolor,color("#ff76c0"));
-        OffCommand=cmd(diffusealpha,0);
-        CurrentSongChangedMessageCommand=function(s)
-        local song = GAMESTATE:GetCurrentSong();
-          if song then
-					  s:finishtweening():settext(song:GetDisplayArtist());
-				  else
-					  s:finishtweening():settext("");
-				  end;
-        end;
-	  };
-    Def.BitmapText {
-        Font="Common normal";
-        Text="current playlist:";
-        OnCommand=cmd(horizalign,left;xy,SCREEN_CENTER_X-150,SCREEN_TOP+40;zoom,0.4);
-        OffCommand=cmd(diffusealpha,0);
-	  };
-    Def.BitmapText {
-        Font="Common normal";
-        OnCommand=cmd(horizalign,left;maxwidth,550;xy,SCREEN_CENTER_X-150,SCREEN_TOP+48;zoom,0.4);
+        OnCommand=cmd(maxwidth,800;xy,SCREEN_CENTER_X,SCREEN_TOP+46;zoom,0.4;diffusecolor,color("#00ffff"));
         OffCommand=cmd(diffusealpha,0);
         CurrentSongChangedMessageCommand=function(s)
         local song = GAMESTATE:GetCurrentSong():GetGroupName();
           if song then
-					  s:finishtweening():settext(string.gsub(song,"^%d%d? ?%- ?", ""));
+					  s:finishtweening():settext("current playlist: "..string.gsub(song,"^%d%d? ?%- ?", ""));
 				  else
 					  s:finishtweening():settext("");
 				  end;
         end;
 	  };
+    LoadActor("record")..{
+    };
     Def.BitmapText {
         Font="Common normal";
-        OnCommand=cmd(horizalign,right;maxwidth,550;xy,SCREEN_CENTER_X+150,SCREEN_TOP+46;zoom,0.4;diffusecolor,color("#ff8000"));
+        OnCommand=cmd(horizalign,right;maxwidth,550;xy,SCREEN_CENTER_X+150,SCREEN_BOTTOM-48;zoom,0.4;diffusecolor,color("#ff8000"));
         OffCommand=cmd(diffusealpha,0);
         CurrentSongChangedMessageCommand=function(self)
 
@@ -461,7 +127,7 @@ return Def.ActorFrame {
                   speedvalue = lobpm..">"..hibpm
                 end;
               end;
-              self:settext("Speed:\n"..speedvalue);
+              self:settext("Speed: "..speedvalue);
             else
               self:stoptweening():settext("");
             end;
@@ -469,7 +135,7 @@ return Def.ActorFrame {
 	  };
     Def.BitmapText {
         Font="Common normal";
-        OnCommand=cmd(horizalign,left;maxwidth,550;xy,SCREEN_CENTER_X-150,SCREEN_BOTTOM-48;zoom,0.4;diffusecolor,color("#00ecff"));
+        OnCommand=cmd(horizalign,left;maxwidth,550;xy,SCREEN_CENTER_X-150,SCREEN_BOTTOM-48;zoom,0.4;diffusecolor,color("#00ff00"));
         OffCommand=cmd(diffusealpha,0);
         CurrentSongChangedMessageCommand=cmd(queuecommand,"Set");
         CurrentStepsP1ChangedMessageCommand=cmd(queuecommand,"Set");
@@ -496,16 +162,4 @@ return Def.ActorFrame {
         OnCommand=cmd(xy,SCREEN_CENTER_X,SCREEN_CENTER_Y+60;zoom,0.4;diffusealpha,0);
         OffCommand=cmd(diffusealpha,1;diffusecolor,color("#ff0000"));
 	  };
-    Def.Sprite{
-      Name="scanlines";
-      Texture=THEME:GetPathG("","crt.png");
-      InitCommand=cmd(Center;diffusealpha,0;SetTextureFiltering,false);
-      OnCommand=function(s)
-        if ThemePrefs.Get("Scanlines") == true then
-          s:finishtweening():diffusealpha(0.45);
-        else
-          s:finishtweening():diffusealpha(0);
-        end;
-      end;
-    };
 };
